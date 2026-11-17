@@ -1,0 +1,19 @@
+[Unit]
+Description=GCS hotspot RTSP camera relay
+Wants=gcs-hotspot.service
+After=NetworkManager.service gcs-hotspot.service
+
+[Service]
+Type=simple
+User=__SERVICE_USER__
+Group=__SERVICE_GROUP__
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 /opt/gcs/video-relay.py --config /etc/gcs/video-relay.json
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target

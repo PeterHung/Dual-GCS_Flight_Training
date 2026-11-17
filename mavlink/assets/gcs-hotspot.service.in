@@ -1,0 +1,19 @@
+[Unit]
+Description=GCS Wi-Fi Hotspot
+Wants=NetworkManager.service
+After=NetworkManager.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=oneshot
+# Explicitly bind activation to the configured Wi-Fi NIC.  At boot, a generic
+# `nmcli connection up` can otherwise try an Ethernet NIC before Wi-Fi is ready.
+ExecStartPre=/usr/bin/nmcli device set __WIFI_INTERFACE__ managed yes
+ExecStart=/usr/bin/nmcli connection up id __HOTSPOT_CONNECTION_NAME__ ifname __WIFI_INTERFACE__
+RemainAfterExit=yes
+Restart=on-failure
+RestartSec=10
+TimeoutStartSec=30
+
+[Install]
+WantedBy=multi-user.target

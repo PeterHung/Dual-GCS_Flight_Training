@@ -1,0 +1,15 @@
+{
+  "rf_interface": "gcsrf0",
+  "rf_address": "192.168.168.249/24",
+  "rf_peer": "192.168.168.198",
+  "hotspot_interface": "wlp2s0",
+  "hotspot_ssid": "GCS_Hotspot",
+  "hotspot_address": "10.42.0.1/24",
+  "student_hotspot_ip": "10.42.0.203",
+  "boot_default": "control",
+  "video": {
+    "upstream_url": "",
+    "port": 8554,
+    "codec": "h265"
+  }
+}

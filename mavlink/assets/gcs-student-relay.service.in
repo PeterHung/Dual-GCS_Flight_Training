@@ -1,0 +1,19 @@
+[Unit]
+Description=GCS single-threaded student MAVLink relay
+Wants=gcs-hotspot.service
+After=gcs-hotspot.service
+
+[Service]
+Type=simple
+User=__SERVICE_USER__
+ExecStart=/usr/bin/python3 /opt/gcs/student-relay.py
+RuntimeDirectory=gcs-student-relay
+RuntimeDirectoryMode=0750
+RuntimeDirectoryPreserve=restart
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

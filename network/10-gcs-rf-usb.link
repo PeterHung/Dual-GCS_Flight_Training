@@ -1,0 +1,5 @@
+[Match]
+Driver=rndis_host
+Property=ID_VENDOR_ID=1f94 ID_MODEL_ID=3002
+[Link]
+Name=gcsrf0

@@ -1,0 +1,18 @@
+[Unit]
+Description=GCS MAVProxy UDP telemetry forwarder
+Wants=network-online.target gcs-hotspot.service
+After=network-online.target gcs-hotspot.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=__SERVICE_USER__
+ExecStart=/opt/gcs/run-mavproxy.sh
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=15
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

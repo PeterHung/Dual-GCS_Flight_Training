@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-11-13T15:37:45.830907+08:00",
+  "live_gcs_modified": false,
+  "python_syntax": {
+    "passed": 17
+  },
+  "json_parse": {
+    "passed": 5
+  },
+  "shell_syntax_and_lf": {
+    "passed": 15
+  },
+  "configuration_and_cli": "passed",
+  "unit_tests": {
+    "mavlink/tests": {
+      "passed": 17,
+      "skipped": 0
+    },
+    "video/tests": {
+      "passed": 5,
+      "skipped": 0
+    },
+    "tools/tests": {
+      "passed": 2,
+      "skipped": 0
+    }
+  },
+  "file_names_and_sensitive_file_exclusion": "passed",
+  "orchestration": {
+    "status": "passed",
+    "cases": {
+      "install": "passed",
+      "start": "passed",
+      "stop": "passed",
+      "remove": "passed",
+      "video_install_failure": "passed",
+      "video_remove_failure": "passed",
+      "status": "passed"
+    },
+    "scope": "Temporary directory and fake services; no real units or networking touched"
+  }
+}
